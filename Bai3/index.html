@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body,
+    p,
+    a {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 1000px;
+      height: 500px;
+      position: relative;
+      margin: 0 auto;
+    }
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+      position: absolute;
+    }
+    .circle {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      background-color: burlywood;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      cursor: pointer;
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+    </div>
+    <div class="circle">?</div>
+    <script>
+      const box = document.querySelector(".box");
+      const circle = document.querySelector(".circle");
+      function moveBox(top, left) {
+        return new Promise((resolve) => {
+          box.style.top = top;
+          box.style.left = left;
+          setTimeout(() => {
+            resolve();
+          }, 2000);
+        });
+      }
+      moveBox("0", "0")
+        .then(() => moveBox("0", "100%"))
+        .then(() => moveBox("100%", "100%"))
+        .then(() => moveBox("100%", "0"))
+        .then(() => moveBox("0", "0"));
+    </script>
+  </body>
+</html>

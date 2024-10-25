@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Video Player</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="video-wrapper">
+      <video width="100%" id="video">
+        <source src="./img/DavidNop.mp4" type="video/mp4" />
+      </video>
+      <div class="play-button" id="playButton">
+        <img class="playbtn" src="./img/mainController.png" alt="Play" />
+      </div>
+      <div class="end">
+        <div class="infor">
+          <div class="text-info">
+            <p class="text-sing">David Nộp</p>
+            <p class="text-color">Music</p>
+          </div>
+          <div class="text-color" style="display: flex">
+            <p class="time"></p>
+            <!-- <p>49:28/</p>
+            <p>1:59:21</p> -->
+          </div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar" id="progress"></div>
+        </div>
+        <div class="controls">
+          <div class="function-left">
+            <div class="stop-play">
+              <img
+                src="./img/play.png"
+                alt="img"
+                style="display: none"
+                id="stop"
+              />
+              <img src="./img/stop.png" alt="img" id="play" />
+            </div>
+            <img src="./img/prev.png" alt="img" id="prev" />
+            <img src="./img/next.png" alt="img" id="next" />
+          </div>
+          <div class="function-right">
+            <div class="mute">
+              <img src="./img/unmute.png " alt="img" id="unmute" />
+              <img
+                src="./img/mute.png"
+                alt="img"
+                id="mute"
+                style="display: none"
+              />
+            </div>
+            <img src="./img/fullscreen.png" alt="img" id="fullscreen" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
